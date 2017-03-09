@@ -1,0 +1,13 @@
+3/9/2017 2:10:42 PM	This log contains information about the import operation of the script 'nAnnagement.Schema.edmx.sql' into project 'nAnnagement.Sql' on computer 'NABOO' by user'cblake.
+3/9/2017 2:10:42 PM	Started importing file: C:\Users\cblake\Documents\Projects\Nova.nAnnagement\nAnnagement.Model\nAnnagement.Schema.edmx.sql 
+3/9/2017 2:10:42 PM	File name C:\Users\cblake\Documents\Projects\Nova.nAnnagement\nAnnagement.Model\nAnnagement.Schema.edmx.sql (size: 10945)
+3/9/2017 2:10:42 PM	Parsing import script
+3/9/2017 2:10:43 PM	Total number of batches in script: 47
+3/9/2017 2:10:43 PM	Total number of statements in script: 28
+3/9/2017 2:10:43 PM	The script was successfully imported into the project.
+3/9/2017 2:10:43 PM	Analyzing schema objects...
+3/9/2017 2:10:43 PM	Scanning project for duplicate elements
+3/9/2017 2:10:43 PM	Finished duplicate element processing
+3/9/2017 2:10:43 PM	In the script that you provided to the import operation, one or more statements were not fully understood. These statements were moved to the ScriptsIgnoredOnImport.sql file. Review the file contents for additional information.
+3/9/2017 2:10:43 PM	A summary of the import was saved to the following location: C:\Users\cblake\Documents\Projects\Nova.nAnnagement\nAnnagement.Sql\Import Script Logs\nAnnagement_Schema_e_20170309061042.log
+3/9/2017 2:10:43 PM	Click Finish to continue...

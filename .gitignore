@@ -1,0 +1,14 @@
+*.pdb
+.vs/
+.vscode/
+*.DotSettings
+*.lnk
+*.StyleCop
+*.user
+*.dbmdl
+*.vspscc
+*.Publish.xml
+packages/
+*/bin
+*/obj
+*/*.jfd

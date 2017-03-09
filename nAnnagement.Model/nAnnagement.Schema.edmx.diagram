@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3d67dccc141a4463bcd85a24fcda2180" Name="Diagram1" ZoomLevel="83" >
+        <EntityTypeShape EntityType="Schema.Employee" Width="1.5" PointX="5.5" PointY="0.875" />
+        <EntityTypeShape EntityType="Schema.Achievements" Width="1.5" PointX="2" PointY="0.5" />
+        <AssociationConnector Association="Schema.EmployeeAchievements" />
+        <EntityTypeShape EntityType="Schema.Skill" Width="1.5" PointX="11" PointY="0.5" />
+        <EntityTypeShape EntityType="Schema.EmployeeSkills" Width="1.5" PointX="8.75" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="Schema.Employee_EmployeeSkills" />
+        <AssociationConnector Association="Schema.Skill_EmployeeSkills" />
+        <EntityTypeShape EntityType="Schema.Category" Width="1.5" PointX="13" PointY="0.5" />
+        <AssociationConnector Association="Schema.CategorySkill" />
+        <EntityTypeShape EntityType="Schema.Project" Width="1.5" PointX="9" PointY="4.25" />
+        <EntityTypeShape EntityType="Schema.Client" Width="1.5" PointX="11.625" PointY="4.25" />
+        <AssociationConnector Association="Schema.ClientProject" />
+        <EntityTypeShape EntityType="Schema.EmployeeProjects" Width="1.5" PointX="6.125" PointY="5.75" />
+        <AssociationConnector Association="Schema.EmployeeEmployeeProjects" />
+        <AssociationConnector Association="Schema.ProjectEmployeeProjects" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
