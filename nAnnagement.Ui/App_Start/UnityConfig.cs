@@ -1,6 +1,7 @@
-using System;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
+using nAnnagement.DataAccess.EF;
+using nAnnagement.Model.Interfaces;
+using System;
 
 namespace nAnnagement.Ui.App_Start
 {
@@ -37,6 +38,8 @@ namespace nAnnagement.Ui.App_Start
 
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
+
+            container.RegisterType<IUnitOfWork, UnitOfWork>();
         }
     }
 }

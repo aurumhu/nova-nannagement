@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3A06869A-A423-45F3-B29B-98860D0C5C76}</ProjectGuid>
+    <ProjectGuid>{FC449BC4-6607-48FA-837D-8BEACC5BC33B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>nAnnagement.Model</RootNamespace>
-    <AssemblyName>nAnnagement.Model</AssemblyName>
+    <RootNamespace>nAnnagement.DataAccess.EF</RootNamespace>
+    <AssemblyName>nAnnagement.DataAccess.EF</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,15 +39,21 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Nova.Patterns.DataAccess.Common, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nova.Patterns.DataAccess.Common.1.0.1\lib\net45\Nova.Patterns.DataAccess.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nova.Patterns.DataAccess.EF, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nova.Patterns.DataAccess.EF.1.0.1\lib\net45\Nova.Patterns.DataAccess.EF.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,75 +62,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Achievements.cs">
-      <DependentUpon>nAnnagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Category.cs">
-      <DependentUpon>nAnnagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Client.cs">
-      <DependentUpon>nAnnagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Employee.cs">
-      <DependentUpon>nAnnagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeProjects.cs">
-      <DependentUpon>nAnnagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeSkills.cs">
-      <DependentUpon>nAnnagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\IClientRepository.cs" />
-    <Compile Include="Interfaces\IUnitOfWork.cs" />
-    <Compile Include="nAnnagement.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>nAnnagement.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="nAnnagement.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>nAnnagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="nAnnagement.Schema.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>nAnnagement.Schema.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Project.cs">
-      <DependentUpon>nAnnagement.tt</DependentUpon>
-    </Compile>
+    <Compile Include="DataContext\INAnnagementDbContext.cs" />
+    <Compile Include="DataContext\NAnnagementDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Skill.cs">
-      <DependentUpon>nAnnagement.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Repositories\ClientRepository.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="nAnnagement.Schema.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>nAnnagement.Schema.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="nAnnagement.Schema.edmx.diagram">
-      <DependentUpon>nAnnagement.Schema.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="nAnnagement.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>nAnnagement.Context.cs</LastGenOutput>
-      <DependentUpon>nAnnagement.Schema.edmx</DependentUpon>
-    </Content>
-    <Content Include="nAnnagement.Schema.edmx.sql" />
-    <Content Include="nAnnagement.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>nAnnagement.cs</LastGenOutput>
-      <DependentUpon>nAnnagement.Schema.edmx</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <ProjectReference Include="..\nAnnagement.Model\nAnnagement.Model.csproj">
+      <Project>{3a06869a-a423-45f3-b29b-98860d0c5c76}</Project>
+      <Name>nAnnagement.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

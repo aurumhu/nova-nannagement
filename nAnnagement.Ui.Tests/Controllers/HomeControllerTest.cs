@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using nAnnagement.Ui;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using nAnnagement.Ui.Controllers;
+using System.Web.Mvc;
 
 namespace nAnnagement.Ui.Tests.Controllers
 {
