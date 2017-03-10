@@ -51,12 +51,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Achievements.cs">
+      <DependentUpon>nAnnagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>nAnnagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>nAnnagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>nAnnagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeProjects.cs">
+      <DependentUpon>nAnnagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSkills.cs">
+      <DependentUpon>nAnnagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nAnnagement.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nAnnagement.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nAnnagement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nAnnagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="nAnnagement.Schema.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>nAnnagement.Schema.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Project.cs">
+      <DependentUpon>nAnnagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Skill.cs">
+      <DependentUpon>nAnnagement.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -68,6 +102,22 @@
       <DependentUpon>nAnnagement.Schema.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="nAnnagement.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>nAnnagement.Context.cs</LastGenOutput>
+      <DependentUpon>nAnnagement.Schema.edmx</DependentUpon>
+    </Content>
+    <Content Include="nAnnagement.Schema.edmx.sql" />
+    <Content Include="nAnnagement.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>nAnnagement.cs</LastGenOutput>
+      <DependentUpon>nAnnagement.Schema.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
